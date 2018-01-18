@@ -1,0 +1,60 @@
+<html>
+  <head>
+<h1> Opracowanie wykresu na podstawie zbioru regresji</h1>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+	['Liczba_sekund',  'TeaTreeOil'],
+	['1', 82372],
+	['2', 82361],
+	['3', 82351],
+	['4', 82351],
+	['5', 82331],
+	['6', 82351],
+	['7', 82341],
+	['8', 82361],
+	['9', 82362],
+	['10', 82372],
+	['11', 82361],
+	['12', 82351],
+	['13', 82372],
+	['14', 82361],
+	['15', 82341],
+	['16', 82351],
+	['17', 82383],
+	['18', 82394],
+	['19', 82383],
+	['20', 82372],
+	['21', 82361],
+	['22', 82341],
+	['23', 82331],
+	['24', 82331],
+	['25', 82351],
+	['26', 82361],
+	['27', 82351],
+	['28', 82372]
+]);
+
+
+        var options = {
+          title: 'Wykres Regresji',
+          curveType: 'function',
+          legend: { position: 'bottom' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="curve_chart" style="width: 900px; height: 600px"></div>
+  </body>
+</html>
+
